@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Senjuti Dutta</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Senjuti Dutta, Postdoctoral Fellow at DySoC, University of Tennessee, Knoxville. HCI research on human-AI decision making, human feedback for AI, and the future of work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;500;600&display=swap">
+<style>
+/* Layout: classic faculty page. Fixed left profile column, one serif reading column on the right. Restrained: one accent, no cards. */
+:root{
+  --bg:#ffffff; --side:#f5f6f8; --ink:#1d2129; --muted:#5d6470; --line:#e1e4e9;
+  --accent:#1d4f91; --badge-bg:#eef2f8; --badge-ink:#1d4f91;
+  --f-serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-sans:"Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14171c; --side:#1a1e24; --ink:#e4e7ec; --muted:#9aa3b0; --line:#2b313a;
+  --accent:#8db4ea; --badge-bg:#1f2a3a; --badge-ink:#a9c6f0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14171c; --side:#1a1e24; --ink:#e4e7ec; --muted:#9aa3b0; --line:#2b313a;
+  --accent:#8db4ea; --badge-bg:#1f2a3a; --badge-ink:#a9c6f0; color-scheme:dark}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg); color:var(--ink); font-family:var(--f-serif); font-size:17px; line-height:1.65; margin:0}
+a{color:var(--accent); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:3px}
+.skip{position:absolute; left:-999px}
+.skip:focus{left:16px; top:16px; background:var(--bg); padding:8px 12px; z-index:30}
+
+.page{display:grid; grid-template-columns:300px minmax(0,1fr); min-height:100vh}
+.side{background:var(--side); border-right:1px solid var(--line); font-family:var(--f-sans)}
+.side > *{max-width:236px}
+.side{position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto; box-sizing:border-box;
+  padding-block:48px 32px; padding-left:max(32px, env(safe-area-inset-left,0px)); padding-right:32px}
+.photo{display:block; width:100%; max-width:200px; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:center top; border-radius:4px}
+.id p{margin:0}
+.name{font-family:var(--f-serif); font-size:1.6rem; font-weight:600; margin-top:20px !important; line-height:1.2}
+.role{font-weight:600; margin-top:6px !important}
+.aff{color:var(--muted); font-size:.95rem; line-height:1.45; margin-top:2px !important}
+.mail{margin-top:14px !important; font-size:.92rem; display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+.mail span{overflow-wrap:anywhere; user-select:all}
+.copy{font:500 .75rem var(--f-sans); padding:1px 8px; border:1px solid var(--line); border-radius:3px; background:var(--bg); color:var(--muted); cursor:pointer}
+.plinks{list-style:none; padding:0; margin:12px 0 0; display:flex; flex-wrap:wrap; gap:4px 16px; font-weight:500}
+.snav{display:flex; flex-direction:column; gap:2px; margin-top:28px; padding-top:20px; border-top:1px solid var(--line)}
+.snav a{color:var(--muted); font-weight:500; padding:5px 0 5px 12px; border-left:3px solid transparent; text-decoration:none}
+.snav a:hover{color:var(--ink)}
+.snav a.on{color:var(--ink); font-weight:600; border-left-color:var(--ink)}
+.plinks a, .more-btn{font-weight:600}
+.glance{list-style:none; padding:0; margin:8px 0 8px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; counter-reset:g}
+.glance a{display:flex; flex-direction:column; gap:6px; height:100%; box-sizing:border-box; padding:14px 16px; border:1px solid var(--line); border-radius:6px; color:var(--ink); text-decoration:none; font-family:var(--f-sans)}
+.glance a:hover{border-color:var(--accent); background:var(--badge-bg)}
+.glance b{font-family:var(--f-serif); font-size:1.02rem; line-height:1.3}
+.glance span{font-size:.92rem; color:var(--muted); line-height:1.45}
+.glance .go{margin-top:auto; color:var(--accent); font-weight:600; font-size:.88rem}
+.totop{display:none}
+
+.main{min-width:0; max-width:760px; padding-block:48px 24px; padding-left:56px; padding-right:max(32px, env(safe-area-inset-right,0px))}
+.sec{padding-bottom:40px; margin-bottom:40px; border-bottom:1px solid var(--line); scroll-margin-top:24px}
+h1,h2,h3,h4{text-wrap:balance; margin:0; line-height:1.25}
+h1{font-size:2.2rem; font-weight:600; margin-bottom:18px}
+h2{font-size:1.55rem; font-weight:600; margin-bottom:18px}
+h3{font-size:1.15rem; font-weight:600}
+.sec p{margin:0 0 14px}
+.intro{color:var(--muted)}
+.mini-h{font-family:var(--f-sans); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:22px 0 8px}
+.interests ul{margin:0; padding-left:20px; columns:2; column-gap:32px}
+
+.news{list-style:none; padding:0; margin:0 0 12px}
+.news li{display:grid; grid-template-columns:5.5rem minmax(0,1fr); gap:14px; padding:5px 0; font-size:.98rem}
+.news.collapsed li.more{display:none}
+.yr{font-family:var(--f-sans); font-weight:600; font-size:.88rem; color:var(--muted); font-variant-numeric:tabular-nums; padding-top:2px}
+.more-btn{font:500 .9rem var(--f-sans); background:none; border:0; padding:0; color:var(--accent); cursor:pointer}
+
+.project{margin-top:30px}
+.project h3{font-size:1.25rem}
+.meta{font-family:var(--f-sans); font-size:.88rem; color:var(--muted); margin:4px 0 12px !important}
+.kw{font-size:.92rem; color:var(--muted)}
+.kw span{font-family:var(--f-sans); font-weight:600}
+.project h4{font-family:var(--f-sans); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:16px 0 8px}
+.rel{list-style:none; padding:0; margin:0; display:grid; gap:7px}
+.rel li{display:grid; grid-template-columns:7.2rem minmax(0,1fr); gap:12px; align-items:baseline; font-size:.96rem; line-height:1.45}
+
+.badge{display:inline-block; justify-self:start; font:600 .74rem/1.2 var(--f-sans); letter-spacing:.02em; color:var(--badge-ink); background:var(--badge-bg);
+  padding:3px 7px; border-radius:3px; white-space:nowrap}
+.pubhead{font-family:var(--f-sans); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:28px 0 6px}
+.publist{list-style:none; padding:0; margin:0}
+.pub{display:grid; grid-template-columns:7.2rem minmax(0,1fr); gap:12px; padding:10px 0; align-items:baseline}
+.pmain{min-width:0; display:flex; flex-direction:column; gap:1px; line-height:1.45}
+.ptitle{font-weight:600}
+.pauthors{font-size:.95rem}
+.pauthors b{font-weight:600}
+.pvenue{font-size:.93rem; color:var(--muted)}
+.pvenue a{font-family:var(--f-sans); font-weight:500; font-size:.88rem}
+
+.cols{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px}
+.cols > div{min-width:0}
+.cols h3{margin:0 0 12px}
+.cols h3 ~ h3{margin-top:28px}
+.tl{list-style:none; padding:0; margin:0; display:grid; gap:12px}
+.tl li{display:grid; grid-template-columns:6.4rem minmax(0,1fr); gap:12px}
+.tl b{display:block; font-weight:600; font-size:.98rem; line-height:1.35}
+.tl div span{display:block; font-size:.92rem; color:var(--muted); line-height:1.4}
+.tl .plain{color:var(--ink); font-size:.96rem}
+.cvbtn{display:inline-block; font:600 .95rem var(--f-sans); color:var(--bg); background:var(--accent); padding:10px 18px; border-radius:4px}
+.cvbtn:hover{text-decoration:none; opacity:.9}
+.foot{font-family:var(--f-sans); font-size:.85rem; color:var(--muted); padding-bottom:24px}
+
+@media (max-width: 900px){
+  .page{grid-template-columns:1fr}
+  .side{position:static; height:auto; border-right:0; border-bottom:1px solid var(--line);
+    display:grid; grid-template-columns:140px minmax(0,1fr); gap:0 22px; align-items:start;
+    padding-block:28px 20px; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+  .side > *{max-width:none}
+  .name{margin-top:0 !important}
+  .snav{grid-column:1 / -1; flex-direction:row; flex-wrap:wrap; gap:4px 18px; margin-top:18px; padding-top:14px}
+  .main{padding-block:32px 16px; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px)); max-width:none}
+}
+@media (max-width: 900px){
+  .glance{grid-template-columns:1fr}
+  .snav a{padding:4px 0; border-left:0; border-bottom:3px solid transparent}
+  .snav a.on{border-bottom-color:var(--ink)}
+  .totop{display:block; position:fixed; right:calc(16px + env(safe-area-inset-right,0px)); bottom:calc(16px + env(safe-area-inset-bottom,0px));
+    font:600 .85rem var(--f-sans); background:var(--ink); color:var(--bg); padding:9px 14px; border-radius:999px; text-decoration:none; z-index:20}
+}
+@media (max-width: 560px){
+  body{font-size:16px}
+  .side{grid-template-columns:96px minmax(0,1fr); gap:0 16px}
+  .name{font-size:1.35rem}
+  h1{font-size:1.8rem}
+  .interests ul{columns:1}
+  .rel li, .pub{grid-template-columns:1fr; gap:4px}
+  .news li, .tl li{grid-template-columns:1fr; gap:0}
+  .cols{grid-template-columns:1fr; gap:28px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<div class="page">
+<aside class="side">
+  <img class="photo" src="photo.jpg" alt="Photo of Senjuti Dutta" width="640" height="800">
+  <div class="id">
+    <p class="name">Senjuti Dutta</p>
+    <p class="role">Postdoctoral Fellow</p>
+    <p class="aff">Center for the Dynamics of Social Complexity<br>University of Tennessee, Knoxville</p>
+    <p class="mail"><span id="em1">sdutta6@vols.utk.edu</span> <button type="button" class="copy" data-copy="em1" aria-label="Copy email address">Copy</button></p>
+    <ul class="plinks"><li><a href="cv.pdf" target="_blank" rel="noopener">CV</a></li></ul>
+  </div>
+  <nav class="snav" aria-label="Sections">
+    <a href="#about">About</a><a href="#news">News</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#cv">CV</a>
+  </nav>
+</aside>
+
+<main class="main">
+<section id="about" class="sec">
+  <h1>Senjuti Dutta</h1>
+  <p>I am a Postdoctoral Fellow at the <a href="https://dysoc.org/" target="_blank" rel="noopener">Center for the Dynamics of Social Complexity (DySoC)</a> at the University of Tennessee, Knoxville. I work in human-computer interaction (HCI). My research asks how intelligent systems can better support human reasoning and real-world work, and how people make decisions with AI.</p>
+  <p>My PhD research investigated the gap between the promised flexibility of crowdwork and the rigid workflows enforced by current platforms. Through empirical studies across smartphones, tablets, smart speakers, and smartwatches, I examined how crowdworkers adapt their practices to different devices. At Google Research, I studied how human feedback can be collected and modeled to build higher-quality AI systems. Building on this work, I now design adaptive AI systems that align with people’s cognitive processes, goals, and contexts, and I study how teams reason and make decisions in high-stakes settings. I am currently studying how the way AI expresses uncertainty affects how people make decisions.</p>
+  <p>I received my Ph.D. in Computer Science from the University of Tennessee, Knoxville in 2024. Before DySoC, I was a Postdoctoral Researcher at the University of Colorado Boulder.</p>
+  <div class="interests"><h2 class="mini-h">Research interests</h2><ul><li>Human-computer interaction</li><li>Human–AI decision making</li><li>Human data and feedback for AI</li><li>Future of work and workforce adaptation</li></ul></div>
+</section>
+
+<section id="news" class="sec">
+  <h2>News</h2>
+  <ol class="news collapsed" id="newslist"><li><span class="yr">Sep 2026</span><span>Led the workshop <i>The Future of Research in the Age of Human–AI Collective Intelligence</i> at HCOMP & ACM Collective Intelligence 2026.</span></li><li><span class="yr">Aug 2026</span><span>Joined the Center for the Dynamics of Social Complexity (DySoC) at UT Knoxville as a Postdoctoral Fellow.</span></li><li><span class="yr">Jun 2026</span><span>Attended HCIC 2026 for the first time.</span></li><li><span class="yr">Apr 2026</span><span>Invited to serve as Workshop Co-Chair for HCOMP & ACM Collective Intelligence 2026.</span></li><li><span class="yr">Jan 2026</span><span>Our CHI 2026 extended abstract on LLM-assisted annotation of team communication was accepted.</span></li><li><span class="yr">Sep 2025</span><span>Started as a Postdoctoral Researcher in the SHINE Lab at CU Boulder.</span></li><li><span class="yr">Aug 2025</span><span>Presented <i>A Comparative Study of Device Usage and Preferences Across Crowdsourcing Platforms</i> at ACM Collective Intelligence 2025.</span></li><li><span class="yr">Nov 2024</span><span>Gave an invited talk at the CHIRE seminar, RMIT University.</span></li><li class=more><span class="yr">Nov 2024</span><span>Started as a Human Data STEM Specialist at xAI.</span></li><li class=more><span class="yr">Oct 2024</span><span>Gave an invited talk at the PACE workshop at HCOMP 2024.</span></li><li class=more><span class="yr">Oct 2024</span><span>Presented <i>Unveiling the Inter-Related Preferences of Crowdworkers</i> at HCOMP 2024.</span></li><li class=more><span class="yr">Sep 2024</span><span>Attended Denver Startup Week.</span></li><li class=more><span class="yr">Jul 2024</span><span><i>Beyond Thumbs Up/Down</i> was accepted as a full paper at AIES 2024.</span></li><li class=more><span class="yr">Jun 2024</span><span><i>Beyond Thumbs Up/Down</i> was accepted at an ICML 2024 workshop.</span></li><li class=more><span class="yr">Jun 2024</span><span>Defended my PhD dissertation, <i>Understanding Traits to Support Crowdworkers’ Flexibility</i>.</span></li><li class=more><span class="yr">May 2024</span><span>Started an internship at Keywords Studios as a Human Data Project Manager.</span></li><li class=more><span class="yr">May 2024</span><span>Our workshop <i>Envisioning Humans in a Safe, AI Future</i> was accepted at Deep Learning Indaba 2024. I authored most of the workshop content.</span></li><li class=more><span class="yr">Feb 2024</span><span>Invited to serve as Publicity & Networking Co-Chair for HCOMP 2024.</span></li><li class=more><span class="yr">Dec 2023</span><span><i>A Design Space for Intelligent and Interactive Writing Assistants</i> was accepted at CHI 2024.</span></li><li class=more><span class="yr">Aug 2023</span><span>Received the Yates Dissertation Fellowship.</span></li><li class=more><span class="yr">Apr 2023</span><span>Published a CHI 2023 workshop paper on authorial leverage in generative story writing, from my Google internship.</span></li><li class=more><span class="yr">Aug 2022</span><span>Our poster on personalizing multi-device setups in crowdwork was accepted at UbiComp/ISWC 2022.</span></li><li class=more><span class="yr">Aug 2022</span><span>Started a research internship at Google Research.</span></li><li class=more><span class="yr">2022</span><span>Attended the HCOMP 2022 Doctoral Consortium, mentored by Dr. Jeffrey P. Bigham.</span></li><li class=more><span class="yr">Apr 2022</span><span>Attended CHI 2022 in New Orleans.</span></li></ol>
+  <button type="button" class="more-btn" id="newsmore" aria-expanded="false">Show all news</button>
+</section>
+
+<section id="research" class="sec">
+  <h2>Research</h2>
+  <p class="intro">My work is organized around three connected projects on how AI can strengthen human decision making, and how the workforce adapts to working with AI.</p>
+  <ol class="glance" aria-label="Projects at a glance"><li><a href="#p-teams"><b>How teams reason and make decisions in high-stakes settings</b><span>How teams notice problems, question information, and decide, and how AI can help analyze this at scale.</span><span class="go">Read more ↓</span></a></li><li><a href="#p-genai"><b>Human feedback for higher-quality AI models</b><span>How to collect and model human feedback so AI systems serve people more reliably.</span><span class="go">Read more ↓</span></a></li><li><a href="#p-crowd"><b>Flexible digital work across devices</b><span>How workers use phones, tablets, speakers, and watches for flexible work, and how platforms can adapt.</span><span class="go">Read more ↓</span></a></li></ol>
+  <article class="project" id="p-teams">
+  <h3>How teams reason and make decisions in high-stakes settings</h3>
+  <p class="meta">2025 – now</p>
+  <p>Teams in high-stakes settings must make fast decisions with incomplete or contradictory information. However, we still know little about how a team notices that something is wrong, questions it, and decides what to do next.</p><p>We study this question through team communication and metacognition. Our first step maps which parts of annotating team communication large language models can take on, and where human judgment remains essential. This shows how AI can help researchers analyze team decision making at a scale that manual coding alone cannot reach, while keeping people in charge of the judgments that matter.</p>
+  <p class="kw"><span>Keywords:</span> Decision making, Metacognition, AI-enabled analysis, LLM-assisted annotation</p>
+  <h4>Related publications</h4>
+  <ul class="rel"><li><span class="badge">CHI 2026 EA</span><a href="https://scholar.google.com/scholar?q=%22Mapping%20the%20Spectrum%20of%20Automatability%3A%20A%20Framework%20for%20LLM-Assisted%20Annotation%20of%20Team%20Communication%20and%20Metacognition%22" target="_blank" rel="noopener">Mapping the Spectrum of Automatability: A Framework for LLM-Assisted Annotation of Team Communication and Metacognition</a></li></ul>
+</article><article class="project" id="p-genai">
+  <h3>Human feedback for higher-quality AI models</h3>
+  <p class="meta">2022 – 2024</p>
+  <p>Generative AI systems learn from human judgments. However, people judge the same output differently, based on their background, experience, and goals. Averaging these judgments away hides the very signal that makes them useful.</p><p>We study how to capture this subjectivity instead. Our work models annotator disagreement in toxic comment identification across different groups of annotators, shows how motivational context shapes satisfaction with model-generated images, and untangles the challenges of collecting fine-grained feedback for text-to-image generation. We also contributed to a design space for intelligent writing assistants and to an evaluation framework for generative story-writing tools. Together, this work helps AI developers collect better human data and build models that serve people more reliably.</p>
+  <p class="kw"><span>Keywords:</span> Human data for AI, AI evaluation, Annotation, Text-to-image, Writing assistants</p>
+  <h4>Related publications</h4>
+  <ul class="rel"><li><span class="badge">AIES 2024</span><a href="https://scholar.google.com/scholar?q=%22Beyond%20Thumbs%20Up/Down%3A%20Untangling%20Challenges%20of%20Fine-Grained%20Feedback%20for%20Text-to-Image%20Generation%22" target="_blank" rel="noopener">Beyond Thumbs Up/Down: Untangling Challenges of Fine-Grained Feedback for Text-to-Image Generation</a></li><li><span class="badge">CHI 2024</span><a href="https://scholar.google.com/scholar?q=%22A%20Design%20Space%20for%20Intelligent%20and%20Interactive%20Writing%20Assistants%22" target="_blank" rel="noopener">A Design Space for Intelligent and Interactive Writing Assistants</a></li><li><span class="badge">ICML-W 2024</span><a href="https://scholar.google.com/scholar?q=%22Beyond%20Thumbs%20Up/Down%3A%20Untangling%20Challenges%20of%20Fine-Grained%20Feedback%20for%20Text-to-Image%20Generation%22" target="_blank" rel="noopener">Beyond Thumbs Up/Down: Untangling Challenges of Fine-Grained Feedback for Text-to-Image Generation</a></li><li><span class="badge">CHI-W 2023</span><a href="https://scholar.google.com/scholar?q=%22Towards%20an%20Authorial%20Leverage%20Evaluation%20Framework%20for%20Expressive%20Benefits%20of%20Deep%20Generative%20Models%20in%20Story%20Writing%22" target="_blank" rel="noopener">Towards an Authorial Leverage Evaluation Framework for Expressive Benefits of Deep Generative Models in Story Writing</a></li><li><span class="badge">arXiv 2024</span><a href="https://arxiv.org/abs/2403.05576" target="_blank" rel="noopener">Understanding Subjectivity through the Lens of Motivational Context in Model-Generated Image Satisfaction</a></li><li><span class="badge">arXiv 2023</span><a href="https://arxiv.org/abs/2311.00203" target="_blank" rel="noopener">Modeling Subjectivity (by Mimicking Annotator Annotation) in Toxic Comment Identification across Diverse Communities</a></li></ul>
+</article><article class="project" id="p-crowd">
+  <h3>Flexible digital work across devices</h3>
+  <p class="meta">2020 – 2025</p>
+  <p>Crowdwork promises flexibility: work from anywhere, at any time. However, most platforms still assume a worker sits at a desktop computer, which starkly contrasts with how and where people actually work.</p><p>We investigate this gap through empirical studies across smartphones, tablets, smart speakers, and smartwatches. We examine how crowdworkers adapt their practices to different devices, and which inter-related preferences and traits shape these choices. Our overall findings indicate that a one-size-fits-all design leaves many workers behind. We translate these findings into design implications for personalized and flexible work platforms, including AI tools that match tasks to a worker’s device and context. This work speaks to how the workforce adapts as AI changes where and how work gets done.</p>
+  <p class="kw"><span>Keywords:</span> Future of work, Workforce, Crowdsourcing, Mobile and wearable work, Personalization</p>
+  <h4>Related publications</h4>
+  <ul class="rel"><li><span class="badge">CI 2025</span><a href="https://scholar.google.com/scholar?q=%22A%20Comparative%20Study%20of%20Device%20Usage%20and%20Preferences%20Across%20Crowdsourcing%20Platforms%22" target="_blank" rel="noopener">A Comparative Study of Device Usage and Preferences Across Crowdsourcing Platforms</a></li><li><span class="badge">HCOMP 2024</span><a href="https://scholar.google.com/scholar?q=%22Unveiling%20the%20Inter-Related%20Preferences%20of%20Crowdworkers%3A%20Implications%20for%20Personalized%20and%20Flexible%20Platform%20Design%22" target="_blank" rel="noopener">Unveiling the Inter-Related Preferences of Crowdworkers: Implications for Personalized and Flexible Platform Design</a></li><li><span class="badge">CHI 2022</span><a href="https://scholar.google.com/scholar?q=%22Mobilizing%20Crowdwork%3A%20A%20Systematic%20Assessment%20of%20the%20Mobile%20Usability%20of%20HITs%22" target="_blank" rel="noopener">Mobilizing Crowdwork: A Systematic Assessment of the Mobile Usability of HITs</a></li><li><span class="badge">GROUP 2022</span><a href="https://scholar.google.com/scholar?q=%22Characterizing%20Work-Life%20for%20Information%20Work%20on%20Mars%3A%20A%20Design%20Fiction%20for%20the%20New%20Future%20of%20Work%20on%20Earth%22" target="_blank" rel="noopener">Characterizing Work-Life for Information Work on Mars: A Design Fiction for the New Future of Work on Earth</a></li><li><span class="badge">UbiComp 2022</span><a href="https://scholar.google.com/scholar?q=%22Beyond%20a%20One-Size-Fits-All%20Approach%3A%20Towards%20Personalizing%20Multi-Device%20Setups%20in%20Crowdwork%22" target="_blank" rel="noopener">Beyond a One-Size-Fits-All Approach: Towards Personalizing Multi-Device Setups in Crowdwork</a></li><li><span class="badge">HCOMP-W 2024</span><span>Design Implications for Developing Flexible and Inclusive Crowdwork AI Systems</span></li><li><span class="badge">CHI-W 2022</span><span>Doing Work from Where You Are: AI HIT Management Dispatching Work Tailored to Context</span></li><li><span class="badge">CSCW-W 2021</span><a href="https://scholar.google.com/scholar?q=%22The%20Productivity%20Paradox%3A%20Understanding%20Tooling%20Biases%20in%20Crowdwork%22" target="_blank" rel="noopener">The Productivity Paradox: Understanding Tooling Biases in Crowdwork</a></li><li><span class="badge">PhD Thesis 2024</span><a href="https://scholar.google.com/scholar?q=%22Understanding%20Traits%20to%20Support%20Crowdworkers%E2%80%99%20Flexibility%22" target="_blank" rel="noopener">Understanding Traits to Support Crowdworkers’ Flexibility</a></li></ul>
+</article>
+</section>
+
+<section id="publications" class="sec">
+  <h2>Publications</h2>
+  <p class="intro">My name is in bold. Full list also in my <a href="cv.pdf" target="_blank" rel="noopener">CV</a>.</p>
+  <h3 class="pubhead">Peer-reviewed conference papers</h3><ol class="publist"><li class="pub" data-proj="crowd"><span class="badge">CI 2025</span><div class="pmain"><span class="ptitle">A Comparative Study of Device Usage and Preferences Across Crowdsourcing Platforms</span><span class="pauthors"><b>Dutta, S.</b>, & Ruoti, S.</span><span class="pvenue"><i>ACM Collective Intelligence Conference (CI ’25)</i>, 2025. Acceptance rate 24%. <a href="https://scholar.google.com/scholar?q=%22A%20Comparative%20Study%20of%20Device%20Usage%20and%20Preferences%20Across%20Crowdsourcing%20Platforms%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li><li class="pub" data-proj="crowd"><span class="badge">HCOMP 2024</span><div class="pmain"><span class="ptitle">Unveiling the Inter-Related Preferences of Crowdworkers: Implications for Personalized and Flexible Platform Design</span><span class="pauthors"><b>Dutta, S.</b>, Linder, R., Williams, A. C., Kuzminykh, A., & Ruoti, S.</span><span class="pvenue"><i>Proceedings of the AAAI Conference on Human Computation and Crowdsourcing (HCOMP ’24)</i>, 2024. Vol. 12, pp. 55–64. <a href="https://scholar.google.com/scholar?q=%22Unveiling%20the%20Inter-Related%20Preferences%20of%20Crowdworkers%3A%20Implications%20for%20Personalized%20and%20Flexible%20Platform%20Design%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li><li class="pub" data-proj="genai"><span class="badge">AIES 2024</span><div class="pmain"><span class="ptitle">Beyond Thumbs Up/Down: Untangling Challenges of Fine-Grained Feedback for Text-to-Image Generation</span><span class="pauthors">Collins, K. M., Kim, N., Bitton, Y., Rieser, V., Omidshafiei, S., Hu, Y., Chen, S., <b>Dutta, S.</b>, Chang, M., Lee, K., & Liang, Y.</span><span class="pvenue"><i>Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society (AIES ’24)</i>, 2024. Acceptance rate 38%. <a href="https://scholar.google.com/scholar?q=%22Beyond%20Thumbs%20Up/Down%3A%20Untangling%20Challenges%20of%20Fine-Grained%20Feedback%20for%20Text-to-Image%20Generation%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li><li class="pub" data-proj="genai"><span class="badge">CHI 2024</span><div class="pmain"><span class="ptitle">A Design Space for Intelligent and Interactive Writing Assistants</span><span class="pauthors">Lee, M., Gero, K., Chung, J., Shum, S., Raheja, V., Shen, H., Venugopalan, S., Wambsganss, T., Zhou, D., Alghamdi, E., August, T., Bhat, A., Choksi, M., <b>Dutta, S.</b>, et al.</span><span class="pvenue"><i>Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems (CHI ’24)</i>, 2024. Acceptance rate 25.3%. <a href="https://scholar.google.com/scholar?q=%22A%20Design%20Space%20for%20Intelligent%20and%20Interactive%20Writing%20Assistants%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li><li class="pub" data-proj="crowd"><span class="badge">CHI 2022</span><div class="pmain"><span class="ptitle">Mobilizing Crowdwork: A Systematic Assessment of the Mobile Usability of HITs</span><span class="pauthors"><b>Dutta, S.</b>, Linder, R., Lowe, D., Rosenbalm, R., Kuzminykh, A., & Williams, A. C.</span><span class="pvenue"><i>Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems (CHI ’22)</i>, 2022. Acceptance rate 25.3%. <a href="https://scholar.google.com/scholar?q=%22Mobilizing%20Crowdwork%3A%20A%20Systematic%20Assessment%20of%20the%20Mobile%20Usability%20of%20HITs%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li><li class="pub" data-proj="crowd"><span class="badge">GROUP 2022</span><div class="pmain"><span class="ptitle">Characterizing Work-Life for Information Work on Mars: A Design Fiction for the New Future of Work on Earth</span><span class="pauthors">Linder, R., Hunter, C., McLemore, J., <b>Dutta, S.</b>, Akbar, F., Grover, T., Breideband, T., Borghouts, J. W., Lu, Y., Mark, G., & Henley, A. Z.</span><span class="pvenue"><i>Proceedings of the ACM on Human-Computer Interaction, 6(GROUP)</i>, 2022. <a href="https://scholar.google.com/scholar?q=%22Characterizing%20Work-Life%20for%20Information%20Work%20on%20Mars%3A%20A%20Design%20Fiction%20for%20the%20New%20Future%20of%20Work%20on%20Earth%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li><li class="pub" data-proj="early"><span class="badge">IWQoS 2021</span><div class="pmain"><span class="ptitle">Secure and Efficient Task Matching with Multi-Keyword in Multi-Requester and Multi-Worker Crowdsourcing</span><span class="pauthors">Yang, K., & <b>Dutta, S.</b></span><span class="pvenue"><i>IEEE/ACM 29th International Symposium on Quality of Service (IWQoS ’21)</i>, 2021. <a href="https://scholar.google.com/scholar?q=%22Secure%20and%20Efficient%20Task%20Matching%20with%20Multi-Keyword%20in%20Multi-Requester%20and%20Multi-Worker%20Crowdsourcing%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li><li class="pub" data-proj="early"><span class="badge">EAIT 2018</span><div class="pmain"><span class="ptitle">Divya-Dristi: A Smartphone-Based Campus Navigation System for the Visually Impaired</span><span class="pauthors"><b>Dutta, S.</b>, Barik, M. S., Chowdhury, C., & Gupta, D.</span><span class="pvenue"><i>Fifth International Conference on Emerging Applications of Information Technology (EAIT ’18)</i>, 2018. <a href="https://scholar.google.com/scholar?q=%22Divya-Dristi%3A%20A%20Smartphone-Based%20Campus%20Navigation%20System%20for%20the%20Visually%20Impaired%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li></ol><h3 class="pubhead">Extended abstracts</h3><ol class="publist"><li class="pub" data-proj="teams"><span class="badge">CHI 2026 EA</span><div class="pmain"><span class="ptitle">Mapping the Spectrum of Automatability: A Framework for LLM-Assisted Annotation of Team Communication and Metacognition</span><span class="pauthors"><b>Dutta, S.</b>, Doherty, E., & Hirshfield, L.</span><span class="pvenue"><i>Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems (CHI EA ’26)</i>, 2026. Acceptance rate 20–25%. <a href="https://scholar.google.com/scholar?q=%22Mapping%20the%20Spectrum%20of%20Automatability%3A%20A%20Framework%20for%20LLM-Assisted%20Annotation%20of%20Team%20Communication%20and%20Metacognition%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li></ol><h3 class="pubhead">Peer-reviewed posters</h3><ol class="publist"><li class="pub" data-proj="crowd"><span class="badge">UbiComp 2022</span><div class="pmain"><span class="ptitle">Beyond a One-Size-Fits-All Approach: Towards Personalizing Multi-Device Setups in Crowdwork</span><span class="pauthors"><b>Dutta, S.</b>, Linder, R., Ruoti, S., Williams, A., & Kuzminykh, A.</span><span class="pvenue"><i>Adjunct Proceedings of UbiComp/ISWC ’22</i>, 2022. Acceptance rate 29–34%. <a href="https://scholar.google.com/scholar?q=%22Beyond%20a%20One-Size-Fits-All%20Approach%3A%20Towards%20Personalizing%20Multi-Device%20Setups%20in%20Crowdwork%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li></ol><h3 class="pubhead">Peer-reviewed workshop papers</h3><ol class="publist"><li class="pub" data-proj="genai"><span class="badge">ICML-W 2024</span><div class="pmain"><span class="ptitle">Beyond Thumbs Up/Down: Untangling Challenges of Fine-Grained Feedback for Text-to-Image Generation</span><span class="pauthors">Collins, K., Kim, N., Bitton, Y., Rieser, V., Omidshafiei, S., Hu, Y., Chen, S., <b>Dutta, S.</b>, et al.</span><span class="pvenue"><i>ICML 2024 Workshop</i>, 2024. <a href="https://scholar.google.com/scholar?q=%22Beyond%20Thumbs%20Up/Down%3A%20Untangling%20Challenges%20of%20Fine-Grained%20Feedback%20for%20Text-to-Image%20Generation%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li><li class="pub" data-proj="crowd"><span class="badge">HCOMP-W 2024</span><div class="pmain"><span class="ptitle">Design Implications for Developing Flexible and Inclusive Crowdwork AI Systems</span><span class="pauthors"><b>Dutta, S.</b>, Linder, R., Williams, A. C., Kuzminykh, A., & Ruoti, S.</span><span class="pvenue"><i>HCOMP 2024 Workshop (PACE)</i>, 2024. </span></div></li><li class="pub" data-proj="genai"><span class="badge">CHI-W 2023</span><div class="pmain"><span class="ptitle">Towards an Authorial Leverage Evaluation Framework for Expressive Benefits of Deep Generative Models in Story Writing</span><span class="pauthors">Chen, S., Morgan, C., Olsen, D., Manilow, E., Allado-McDowell, K., Nelson, M. J., Zhang, Q. R., <b>Dutta, S.</b>, Mathewson, K., & Mirowski, P. W.</span><span class="pvenue"><i>CHI 2023 Workshop</i>, 2023. <a href="https://scholar.google.com/scholar?q=%22Towards%20an%20Authorial%20Leverage%20Evaluation%20Framework%20for%20Expressive%20Benefits%20of%20Deep%20Generative%20Models%20in%20Story%20Writing%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li><li class="pub" data-proj="crowd"><span class="badge">CHI-W 2022</span><div class="pmain"><span class="ptitle">Doing Work from Where You Are: AI HIT Management Dispatching Work Tailored to Context</span><span class="pauthors"><b>Dutta, S.</b>, Linder, R., Kuzminykh, A., & Williams, A.</span><span class="pvenue"><i>CHI 2022 Crowd Science Workshop</i>, 2022. </span></div></li><li class="pub" data-proj="crowd"><span class="badge">CSCW-W 2021</span><div class="pmain"><span class="ptitle">The Productivity Paradox: Understanding Tooling Biases in Crowdwork</span><span class="pauthors"><b>Dutta, S.</b>, Linder, R., Lowe, D., Rosenbalm, M., Kuzminykh, A., & Williams, A.</span><span class="pvenue"><i>CSCW 2021 Workshop</i>, 2021. <a href="https://scholar.google.com/scholar?q=%22The%20Productivity%20Paradox%3A%20Understanding%20Tooling%20Biases%20in%20Crowdwork%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li></ol><h3 class="pubhead">Preprints</h3><ol class="publist"><li class="pub" data-proj="genai"><span class="badge">arXiv 2024</span><div class="pmain"><span class="ptitle">Understanding Subjectivity through the Lens of Motivational Context in Model-Generated Image Satisfaction</span><span class="pauthors"><b>Dutta, S.</b>, Chen, S., Mak, S., Ahmad, A., Collins, K., Butryna, A., Ramachandran, D., Dvijotham, K., Pavlick, E., & Rajakumar, R.</span><span class="pvenue"><i>arXiv:2403.05576</i>, 2024. <a href="https://arxiv.org/abs/2403.05576" target="_blank" rel="noopener">[arXiv]</a></span></div></li><li class="pub" data-proj="early"><span class="badge">arXiv 2024</span><div class="pmain"><span class="ptitle">Occasionally Secure: A Comparative Analysis of Code Generation Assistants</span><span class="pauthors">Elgedawy, R., Sadik, J., <b>Dutta, S.</b>, Gautam, A., Georgiou, K., Gholamrezae, F., Ji, F., Lim, K., Liu, Q., & Ruoti, S.</span><span class="pvenue"><i>arXiv:2402.00689</i>, 2024. <a href="https://arxiv.org/abs/2402.00689" target="_blank" rel="noopener">[arXiv]</a></span></div></li><li class="pub" data-proj="genai"><span class="badge">arXiv 2023</span><div class="pmain"><span class="ptitle">Modeling Subjectivity (by Mimicking Annotator Annotation) in Toxic Comment Identification across Diverse Communities</span><span class="pauthors"><b>Dutta, S.</b>, Mittal, S., Chen, S., Ramachandran, D., Rajakumar, R., Kivlichan, I., Mak, S., Butryna, A., & Paritosh, P.</span><span class="pvenue"><i>arXiv:2311.00203</i>, 2023. <a href="https://arxiv.org/abs/2311.00203" target="_blank" rel="noopener">[arXiv]</a></span></div></li></ol><h3 class="pubhead">Theses</h3><ol class="publist"><li class="pub" data-proj="crowd"><span class="badge">PhD Thesis 2024</span><div class="pmain"><span class="ptitle">Understanding Traits to Support Crowdworkers’ Flexibility</span><span class="pauthors"><b>Dutta, S.</b></span><span class="pvenue"><i>PhD thesis, University of Tennessee, Knoxville</i>, 2024. <a href="https://scholar.google.com/scholar?q=%22Understanding%20Traits%20to%20Support%20Crowdworkers%E2%80%99%20Flexibility%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li><li class="pub" data-proj="early"><span class="badge">MS Thesis 2020</span><div class="pmain"><span class="ptitle">Enabling Efficient and Privacy-Preserving Task Matching for Cloud-Based Crowdsourcing</span><span class="pauthors"><b>Dutta, S.</b></span><span class="pvenue"><i>MS thesis, University of Memphis</i>, 2020. <a href="https://scholar.google.com/scholar?q=%22Enabling%20Efficient%20and%20Privacy-Preserving%20Task%20Matching%20for%20Cloud-Based%20Crowdsourcing%22" target="_blank" rel="noopener">[Find paper]</a></span></div></li></ol>
+</section>
+
+<section id="cv" class="sec">
+  <h2>CV</h2>
+  <a class="cvbtn" href="cv.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+</section>
+<a class="totop" href="#about">Back to top ↑</a>
+<footer class="foot">© 2026 Senjuti Dutta · Last updated November 2026</footer>
+</main>
+</div>
+<script>
+(function(){
+  var list=document.getElementById('newslist'), more=document.getElementById('newsmore');
+  more.addEventListener('click',function(){
+    var c=list.classList.toggle('collapsed');
+    more.textContent=c?'Show all news':'Show fewer';
+    more.setAttribute('aria-expanded', c?'false':'true');
+  });
+  document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){
+    var el=document.getElementById(b.getAttribute('data-copy')), t=el.textContent;
+    function sel(){var r=document.createRange(); r.selectNodeContents(el); var s=getSelection(); s.removeAllRanges(); s.addRange(r);}
+    try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)},sel);}catch(e){sel();}
+  });});
+  var links=[].slice.call(document.querySelectorAll('.snav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function mark(){
+    var y=window.scrollY+window.innerHeight*0.3, cur=0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop<=y) cur=i; });
+    if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4) cur=secs.length-1;
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur); if(i===cur)a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current');});
+  }
+  window.addEventListener('scroll',mark,{passive:true}); mark();
+})();
+</script>
+</body>
+</html>
